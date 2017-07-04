@@ -19,18 +19,18 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import fields, osv, orm
+from openerp.osv import fields, osv,
 from datetime import time, datetime
 from openerp.tools.translate import _
-from openerp import models, api, fields
 
-class res_partner(models.Model):
-    _name = 'res.partner'
+class res_partner(osv.osv):
     _inherit = 'res.partner'
-
-    socio = fields.boolean(string="Socio")
-    
-
+    _columns = {
+    	"socio": fields.boolean("Socio"),
+    }
+    _defaults = {
+			}
+res_socios()
 
 class padron_socios(osv.osv):
 	_name = "padron.socios"
@@ -46,3 +46,4 @@ class padron_socios(osv.osv):
 	}
 	_defaults = {
 			}
+padron_socios()

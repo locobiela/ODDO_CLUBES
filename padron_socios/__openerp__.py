@@ -3,10 +3,10 @@
     'name': "Padron de Socios",
 
     'summary': """
-        Gestion de socios para Clubes""",
+        Gestion de socios para Radioclubes""",
 
     'description': """
-        Modulo que gestiona socios de clubes.
+        Modulo que gestiona socios de Radioclubes.
         altas, bajas y modificaciones del padron
     """,
 
@@ -25,6 +25,6 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'padron_view.xml',
+        'padron_socios.xml',
             ],
 }
