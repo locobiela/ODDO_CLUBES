@@ -19,31 +19,21 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import fields, osv,
+from openerp.osv import fields, osv
 from datetime import time, datetime
 from openerp.tools.translate import _
 
 class res_partner(osv.osv):
     _inherit = 'res.partner'
     _columns = {
-    	"socio": fields.boolean("Socio"),
-    }
+    			"socio": fields.boolean("Socio"),
+    			"dni": fields.char("Documento"),
+    			"num": fields.integer("Numero de Socio"),
+    			"call": fields.char("Señal Distintiva",size=6,help="Señal distintiva o numero de operador",translate=True),
+				"cat": fields.selection([("0","Radioescucha"),("1","Inicial"),("2","Novicio"),("3","Intermedia"),("4","General"),("5","Superior"),("6","Especial"),],"Categoria"),
+				"cond": fields.selection([("0","Cadete"),("1","Activo"),("2","Baja"),("3","Vitalicio"),("4","Honorario"),],"Condicion"),
+				"pago": fields.date("Pago Hasta"),
+    			}
     _defaults = {
-			}
-res_socios()
-
-class padron_socios(osv.osv):
-	_name = "padron.socios"
-	_description = "Formulario de Socios"
-	_columns = {
-	"name": fields.char("Nombre del socio",size=30,required=True,help="Nombre del socio completo con las mayusculas en las primeras letras",translate=True,),
-	"dni": fields.char("Documento",size=9,required=True,help="Numero de documento sin puntos decimales",translate=True),
-	"call": fields.char("Señal Distintiva",size=6,help="Señal distintiva o numero de operador",translate=True),
-	"cat": fields.selection([("0","Radioescucha"),("1","Inicial"),("2","Novicio"),("3","Intermedia"),("4","General"),("5","Superior"),("6","Especial"),],"Categoria"),
-	"cond": fields.selection([("0","Cadete"),("1","Activo"),("2","Baja"),("3","Vitalicio"),("4","Honorario"),],"Condicion"),
-	"fechan": fields.date("Fecha de Nacimiento"),
-	"pago": fields.date("Pago Hasta"),
-	}
-	_defaults = {
-			}
-padron_socios()
+				}
+res_partner()
