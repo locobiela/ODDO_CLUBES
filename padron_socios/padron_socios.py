@@ -20,19 +20,17 @@
 #
 ##############################################################################
 from openerp.osv import fields, osv
-from datetime import time, datetime
-from openerp.tools.translate import _
 
 class res_partner(osv.osv):
     _inherit = 'res.partner'
     _columns = {
     			"socio": fields.boolean("Socio"),
-    			"dni": fields.char("Documento"),
-    			"num": fields.integer("Numero de Socio"),
-    			"call": fields.char("Señal Distintiva",size=6,help="Señal distintiva o numero de operador",translate=True),
-				"cat": fields.selection([("0","Radioescucha"),("1","Inicial"),("2","Novicio"),("3","Intermedia"),("4","General"),("5","Superior"),("6","Especial"),],"Categoria"),
-				"cond": fields.selection([("0","Cadete"),("1","Activo"),("2","Baja"),("3","Vitalicio"),("4","Honorario"),],"Condicion"),
-				"pago": fields.date("Pago Hasta"),
+    			"dni": fields.char("Documento")
+    			#"num": fields.integer("Numero de Socio"),
+    			#"call": fields.char("Señal Distintiva",size=6,help="Señal distintiva o numero de operador",translate=True),
+				#"cat": fields.selection([("0","Radioescucha"),("1","Inicial"),("2","Novicio"),("3","Intermedia"),("4","General"),("5","Superior"),("6","Especial"),],"Categoria"),
+				#"cond": fields.selection([("0","Cadete"),("1","Activo"),("2","Baja"),("3","Vitalicio"),("4","Honorario"),],"Condicion"),
+				#"pago": fields.date("Pago Hasta")
     			}
     _defaults = {
 				}
