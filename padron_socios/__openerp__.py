@@ -26,5 +26,6 @@
     'data': [
         # 'security/ir.model.access.csv',
         'padron_socios.xml',
+        'padron_cuentas.xml',
             ],
 }
