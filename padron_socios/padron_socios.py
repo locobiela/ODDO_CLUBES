@@ -20,7 +20,7 @@
 #
 ##############################################################################
 from openerp.osv import fields, osv
-from datetime import datetime, date, time, timedelta
+from datetime import datetime, date, time, timedelta, calendar
 current_date=datetime.now().strftime("%m/%Y")
 
 class res_partner(osv.osv):

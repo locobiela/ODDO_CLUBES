@@ -6,7 +6,7 @@
 			<field name="model">res.partner</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">                            
-				<tree string="Cuentas Corrientes" colors="red:vence, &lt;=, current_date"> <!-- colors="red:venc &lt;= 2"((context_today()).strftime('%m/%Y’))   otro tambien  time.strftime('%m/%Y')-->                
+				<tree string="Cuentas Corrientes" colors="red:vence &lt;= current_date">               
               	    <field name="num"/>
               	    <field name="name"/>
               	    <field name="cond"/>
